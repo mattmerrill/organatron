@@ -1,0 +1,39 @@
+<h1>Listing rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Floor</th>
+      <th>Whiteboard</th>
+      <th>Monitor</th>
+      <th>Capacity</th>
+      <th>Building</th>
+      <th>Ea only</th>
+      <th>Ethernet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.name %></td>
+        <td><%= room.floor %></td>
+        <td><%= room.whiteboard %></td>
+        <td><%= room.monitor %></td>
+        <td><%= room.capacity %></td>
+        <td><%= room.building %></td>
+        <td><%= room.ea_only %></td>
+        <td><%= room.ethernet %></td>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Room', new_room_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  floor: 1
+  whiteboard: false
+  monitor: false
+  capacity: 
+  building: MyString
+  ea_only: false
+  ethernet: false
+
+two:
+  name: MyString
+  floor: 1
+  whiteboard: false
+  monitor: false
+  capacity: 
+  building: MyString
+  ea_only: false
+  ethernet: false
