@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+/* Font override */
+* {
+  font-family: "Proxima Nova","Open Sans","Gill Sans MT","Gill Sans",Corbel,Arial,sans-serif;
+}
