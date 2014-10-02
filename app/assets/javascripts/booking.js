@@ -31,8 +31,15 @@ $(function() {
   });
 
   $('#Search').on('click', function() {
-    $('#Search').blur().text("Search Again");
-    $('.attendee').fadeOut();
+    if ($('#Date').val() == '') {
+      alert("Please select a date");
+      return false;
+    }
+    if ($('#Duration').val() == '') {
+      alert("Please set a duration");
+      return false;
+    }
+    $('#Search').blur().text("Search Again").hide();
     $('#Intro').addClass('passive');
   });
 });

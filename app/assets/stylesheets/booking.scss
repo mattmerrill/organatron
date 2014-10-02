@@ -11,8 +11,12 @@ body {
     font-size: 60px;
     padding-bottom: 30px;
   }
-  h1, h2 {
+  h1, h2, h3 {
     color: white;
+  }
+
+  h2, h3 {
+    display: none;
   }
 
   input.form-control {
@@ -31,10 +35,39 @@ body {
 #Intro.passive {
   width: 400px;
   float: left;
+  text-align: left;
+  padding-top: 60px;
 
+  h2, h3 {
+    display: block;
+  }
   input {
     background-color: transparent;
     border: none;
     color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
+  input.attendee {
+    display: none;
+  }
+  .form-group {
+    margin: 0;
+    div {
+      padding: 0;
+    }
+  }
+
+  h3 {
+    margin-top: 100px;
+  }
+}
+
+#Results.passive {
+  display: none;
+}
+#Results.active {
+  background-color: white;
 }
