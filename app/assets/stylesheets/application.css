@@ -16,5 +16,25 @@
 
 /* Font override */
 * {
-  font-family: "Proxima Nova","Open Sans","Gill Sans MT","Gill Sans",Corbel,Arial,sans-serif;
+  font-family: "Proxima Nova Soft","Proxima Nova","Open Sans","Gill Sans MT","Gill Sans",Corbel,Arial,sans-serif;
+}
+
+button.btn {
+  background-color: #51a3db;
+  color: #fff;
+  border-radius: 3px;
+  border-color: #0f476d;
+  border-width: 1px 1px 2px 1px;
+}
+
+button.btn:hover {
+  background-color: #3276b1;
+  color: white;
+  border-color: #285e8e;
+}
+
+button.btn:focus {
+  background-color: #3276b1;
+  color: white;
+  border-color: #285e8e;
 }
