@@ -1,0 +1,40 @@
+body {
+  background-image: url('../assets/background.png');
+}
+
+#Intro {
+  max-width: 700px;
+  text-align: center;
+  padding-top: 100px;
+
+  h1 {
+    font-size: 60px;
+    padding-bottom: 30px;
+  }
+  h1, h2 {
+    color: white;
+  }
+
+  input.form-control {
+    font-size: 28px;
+    padding: 30px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+  }
+
+  button.btn {
+    font-size: 22px;
+    border-radius: 6px;
+  }
+}
+
+#Intro.passive {
+  width: 400px;
+  float: left;
+
+  input {
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+}
