@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+seed_file = Rails.root.join('db', 'seeds', 'contacts.yml')
+contacts = YAML::load_file(seed_file)
+contacts.each do |contact|
+  Contact.create!(contact)
+end
+
+
