@@ -38,6 +38,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Proxima Nova Soft", sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
 button.btn {
   background-color: #51a3db;
   color: #fff;
@@ -60,4 +64,23 @@ button.btn:focus {
 
 h3 {
   font-weight: 400;
+}
+
+#Header {
+  background-color: rgb(48,52,66);
+  color: white;
+}
+#Header h1 {
+  margin-top: 0;
+  padding: 15px;
+  font-family: "Proxima Nova Light";
+  vertical-align: middle;
+  display: inline;
+  font-size: 26px;
+}
+#Header img {
+  width: 30px;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

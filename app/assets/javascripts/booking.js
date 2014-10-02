@@ -29,6 +29,12 @@ $(function() {
       addAttendee($(this).val());
     }
   });
+  $('#Duration').on('blur', function() {
+    $(this).val($(this).val()+' Minutes');
+  });
+  $('#Duration').on('focus', function() {
+    $(this).val($(this).val().split(' Minutes')[0]);
+  });
 
   $('#Search').on('click', function() {
     if ($('#Date').val() == '') {

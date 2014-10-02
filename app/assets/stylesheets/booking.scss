@@ -1,5 +1,9 @@
 body {
-  background-image: url('../assets/background.png');
+  background-image: url('../assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: rgb(48,52,66);
 }
 
 #Intro {
