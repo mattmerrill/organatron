@@ -11,4 +11,9 @@ contacts.each do |contact|
   Contact.create!(contact)
 end
 
+seed_file = Rails.root.join('db', 'seeds', 'rooms.yml')
+rooms = YAML::load_file(seed_file)
+rooms.each do |room|
+  Room.create!(room)
+end
 

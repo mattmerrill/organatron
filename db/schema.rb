@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20141002174628) do
   end
 
   create_table "rooms", force: true do |t|
+    t.string   "room_number"
     t.string   "name"
     t.integer  "floor"
     t.boolean  "whiteboard"

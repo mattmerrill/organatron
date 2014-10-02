@@ -1,0 +1,182 @@
+- room_number: 141
+  name: Pops
+  floor: 1
+  whiteboard: True
+  monitor: True
+  capacity: 6
+  building: Main
+  ea_only: False
+  ethernet: True
+
+- room_number: 122
+  name: Trix
+  floor: 1
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 10
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+- room_number: 121
+  name: Kix
+  floor: 1
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 15
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+
+- room_number: 235
+  name: Count Chocula
+  floor: 2
+  whiteboard: TRUE
+  monitor: FALSE
+  capacity: 4
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+
+- room_number: 150
+  name: Apple Jacks
+  floor: 2
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 12
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+- room_number: 234
+  name: Leadership
+  floor: 2
+  whiteboard: TRUE
+  monitor: FALSE
+  capacity: 6
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+
+- room_number: 219
+  name: Breakout
+  floor: 2
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 40
+  building: Main
+  ea_only: TRUE
+  ethernet: TRUE
+
+- room_number: 142
+  name: Honey Comb
+  floor: 1
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 6
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+- room_number: 221
+  name: Coco Puffs
+  floor: 2
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 12
+  building: Main
+  ea_only: TRUE
+  ethernet: TRUE
+
+- room_number: 225
+  name: Theater
+  floor: 2
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 120
+  building: Main
+  ea_only: TRUE
+  ethernet: TRUE
+
+- room_number: 135
+  name: Raisin Bran
+  floor: 2
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 6
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+- room_number: null
+  name: Fiber One
+  floor: 2
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 6
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+- room_number: 140
+  name: Fruity Pebbles
+  floor: 1
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 4
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+- room_number: 119
+  name: Frosted Flakes
+  floor: 1
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 12
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+- room_number: 246
+  name: Fruit Loops
+  floor: 2
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 6
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+- room_number: 247
+  name: Honey Smacks
+  floor: 2
+  whiteboard: TRUE
+  monitor: FALSE
+  capacity: 6
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
+
+- room_number: 248
+  name: Lucky Charms
+  floor: 2
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 6
+  building: Main
+  ea_only: TRUE
+  ethernet: TRUE
+
+- room_number: 251
+  name: Wheaties
+  floor: 2
+  whiteboard: TRUE
+  monitor: TRUE
+  capacity: 8
+  building: Main
+  ea_only: FALSE
+  ethernet: TRUE
