@@ -35,9 +35,14 @@ body {
     border-radius: 6px;
   }
 }
+#Intro.active {
+  #SpecificTime {
+    display: none;
+  }
+}
 
 #Intro.passive {
-  width: 400px;
+  width: 350px;
   float: left;
   text-align: left;
   padding-top: 60px;
@@ -73,5 +78,54 @@ body {
   display: none;
 }
 #Results.active {
+  height: 100%;
   background-color: white;
+  float: right;
+  color: rgb(48,52,66);
+
+  .result {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+
+    .icon {
+      width: 40px;
+      padding: 5px;
+    }
+    .capacity {
+      margin-left: -5px;
+    }
+  }
+
+  .roomPhoto {
+    padding: 22px;
+    width: 300px;
+    height: 160px;
+    float: left;
+  }
+  .roomInfo {
+    float: left;
+    font-size: 15px;
+    font-family: 'Proxima Nova Soft';
+
+    .attendeeCount {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .time {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .time.selected {
+      color: #51a3db;
+    }
+    button {
+      position: absolute;
+      right: 10px;
+      top: 70px;
+      padding: 6px 40px;
+      font-size: 16px;
+      font-family: 'Proxima Nova Light'
+    }
+  }
 }

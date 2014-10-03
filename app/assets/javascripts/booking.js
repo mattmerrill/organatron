@@ -20,7 +20,16 @@ function addAttendee(attendee) {
   });
 }
 
+function resizeResults() {
+  $('#Results').css('width', window.innerWidth-350);
+}
+
 $(function() {
+  resizeResults();
+  $(window).resize(function() {
+    resizeResults();
+  });
+
   $('.attendee').autocomplete({
     source: people
   });
@@ -46,6 +55,11 @@ $(function() {
       return false;
     }
     $('#Search').blur().text("Search Again").hide();
-    $('#Intro').addClass('passive');
+    $('#Results, #Intro').toggleClass('passive active');
+  });
+
+  $('.time').on('click', function() {
+    $(this).parent().find('.time').removeClass('selected');
+    $(this).addClass('selected');
   });
 });
