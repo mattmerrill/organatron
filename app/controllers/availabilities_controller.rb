@@ -42,7 +42,7 @@ class AvailabilitiesController < ApplicationController
   end
 
   def random_times(num)
-    ['9:00a', '11:30a', '12:15p', '1:00p', '1:45p', '2:00p'].sample(num)
+    ['9:00a', '11:30a', '1:00p', '1:45p', '2:00p'].sample(num)
   end
 
 end
