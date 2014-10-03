@@ -1,4 +1,8 @@
 <div id="Intro" class="container active">
+  <div class="row" id="LogoRow">
+    <img alt="meetme" src="../assets/logo.svg" id="Logo">
+  </div>
+
   <div class="row">
     <h2 class="col-sm-10 col-sm-offset-1">Rooms for:</h2>
   </div>
@@ -6,12 +10,15 @@
   <div class="form-horizontal" role="form">
     <div class="form-group">
       <div class="col-sm-12">
-        <input id="Date" type="date" class="form-control" placeholder="Select Date">
+        <input id="Subject" class="form-control" placeholder="Why are you meeting? (e-mail subject)">
       </div>
     </div>
     <div class="form-group">
-      <div class="col-sm-12">
-        <input id="Duration" class="form-control" placeholder="Select Duration in Minutes">
+      <div class="col-sm-6">
+        <input id="Date" class="form-control" placeholder="Select Date">
+      </div>
+      <div class="col-sm-6">
+        <input id="Duration" class="form-control" placeholder="Duration in Minutes">
       </div>
     </div>
     <div class="form-group">
@@ -19,12 +26,14 @@
         <input class="form-control attendee" placeholder="Add Attendee">
       </div>
     </div>
-    <div class="row">
-      <h3 class="col-sm-10 col-sm-offset-1">Have a specific time in mind? Choose below</h3>
-      <input placeholder="8:00am" class="form-control" id="SpecificTime">
-    </div>
-    <button class="btn btn-default col-sm-6 col-sm-offset-3" id="Search">Search Rooms</button>
   </div>
+  <div class="row">
+    <h3 class="col-sm-10 col-sm-offset-1">Have a specific time in mind? Choose below</h3>
+  </div>
+  <div class="row">
+    <input placeholder="8:00am" class="form-control" id="SpecificTime">
+  </div>
+  <button class="btn btn-default col-sm-6 col-sm-offset-3" id="Search">Search Rooms</button>
 </div>
 
 <div id="Results" class="container passive">
@@ -37,7 +46,7 @@
     <span class="time">3:30p</span>
     <span class="time">5:00p</span>
     <span class="attendeeCount">12 available attendees</span>
-    <button class="btn btn-default">Book Now</button>
+    <button class="btn btn-default" data-toggle="modal" data-target="#bookModal">Book Now</button>
     <img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">15</span>
     <img class="icon" src="../assets/ethernet.svg" alt="This room has ethernet available">
     <img class="icon" src="../assets/marker.svg" alt="This room has a whiteboard">
@@ -78,5 +87,40 @@
   <div class="clearfix"></div>
 </div>
 
+  </div>
+</div>
+
+<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1>You have booked Cocoa Puffs</h1>
+        <div class="row">
+          <img src="../assets/room1.jpg" class="roomInfo col-sm-6">
+          <div class="roomInfo col-sm-6">
+            <p>Subject: Great Times</p>
+            <p>Date: Jan 15th, 2014</p>
+            <p>Time: 2:15</p>
+            <p>Room: 115</p>
+          </div>
+        </div>
+        <h1>Invited Attendees</h1>
+        <div class="row attendees">
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+        </div>
+        <div class="row attendees">
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+        </div>
+        <div class="row">
+          <button id="CloseBookingModal" class="col-sm-4 col-sm-offset-4 btn btn-default">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
