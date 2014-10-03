@@ -18,6 +18,10 @@ function resizeResults() {
   $('#Results').css('width', window.innerWidth-350);
 }
 
+function addRoom() {
+  $('#Results .row').append('<div class="result"><img class="roomPhoto" src="../assets/room2.jpg"><div class="roomInfo"><h2>Cocoa Puffs (212)</h2><span class="time selected">2:15p</span><span class="time">3:30p</span><span class="time">5:00p</span><span class="attendeeCount">12 available attendees</span><button class="btn btn-default" data-toggle="modal" data-target="#bookModal">Book Now</button><img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">15</span><img class="icon" src="../assets/ethernet.svg" alt="This room has ethernet available"><img class="icon" src="../assets/marker.svg" alt="This room has a whiteboard"><img class="icon" src="../assets/display.svg" alt="This room has a projector or monitor"></div><div class="clearfix"></div></div>');
+}
+
 $(function() {
   // Window resize helpers
   resizeResults();
@@ -85,7 +89,7 @@ $(function() {
     $('#Results, #Intro').toggleClass('passive active');
   });
 
-  $('.time').on('click', function() {
+  $(document).on('click', '.time', function() {
     $(this).parent().find('.time').removeClass('selected');
     $(this).addClass('selected');
   });
