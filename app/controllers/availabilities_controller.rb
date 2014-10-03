@@ -34,13 +34,13 @@ class AvailabilitiesController < ApplicationController
     }
 
     fake_rooms[duration].each do |room|
-      room.availabilities = random_times(Random.rand(3))
+      room.availabilities = random_times(Random.rand(1..3))
     end
     fake_rooms[duration]
   end
 
   def random_times(num)
-    ['9:00 AM', '11:30 AM', '12:15 PM', '1:00 PM', '1:45 PM', '2:00 PM'].sample(num)
+    ['9:00a', '11:30a', '12:15p', '1:00p', '1:45p', '2:00p'].sample(num)
   end
 
 end
