@@ -54,7 +54,7 @@ $(function() {
       alert("Please set a duration");
       return false;
     }
-    $('#Search').blur().text("Search Again").hide();
+    $('#Search').blur().text("Search Again").toggleClass('col-sm-6 col-sm-offset-3 col-sm-8 col-sm-offset-2');
     $('#Results, #Intro').toggleClass('passive active');
   });
 
