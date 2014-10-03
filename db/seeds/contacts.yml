@@ -22,10 +22,6 @@
   display_name: Carlos Ochoa
   email: carlos.ochoa@infusionsoft.com
 
-- id: 7
-  display_name: Nate Leavitt
-  email: Nathan.leavitt@infusionsoft.com
-
 - id: 8
   display_name: Greg Head
   email: greg.head@infusionsoft.com
@@ -49,3 +45,27 @@
 - id: 13
   display_name: Ammon Curtis
   email: ammon.curtis@infusionsoft.com
+
+- id: 14
+  display_name: Anila Arthanari
+  email: anila.arthanari@infusionsoft.com
+
+- id: 15
+  display_name: Brian Boughton
+  email: brian.boughton@infusionsoft.com
+
+- id: 16
+  display_name: Dan Ralphs
+  email: dan.ralphs@infusionsoft.com
+
+- id: 17
+  display_name: Jeff Boughton
+  email: jeff.boughton@infusionsoft.com
+
+- id: 18
+  display_name: Lauren Hodgson
+  email: lauren.hodgson@infusionsoft.com
+
+- id: 19
+  display_name: Ryan Walker
+  email: ryan.walker@infusionsoft.com
