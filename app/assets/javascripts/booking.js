@@ -20,7 +20,11 @@ function resizeResults() {
 
 function addRoom(room) {
   console.log(room);
-  var result = $('<div class="result"><img class="roomPhoto" src="../assets/room'
+  var result = $('<div class="result" data-room-id="'
+  +room.id
+  +'" data-room-number="'
+  +room.room_number
+  +'"><img class="roomPhoto" src="../assets/room'
   +room.room_number
   +'.jpg"><div class="roomInfo"><h2>'
   +'<span class="roomName">'+room.name+'</span> ('
@@ -128,9 +132,34 @@ $(function() {
     location.reload();
   });
 
+  // We want 2014-10-02T14:00:00Z
+  function formatDate(date, time) {
+    return date.getFullYear() + '-' + ("0000"+(1+date.getMonth())).slice(-2) + '-' + ("0000"+(date.getDate())).slice(-2) + 'T14:00:00Z';
+  }
+
   $(document).on('click', '.bookNow', function() {
-    $('#bookModal img.roomInfo').attr('src', $(this).parents('.result').find('img').attr('src'));
-    $('#bookModal span.roomName').html($(this).parents('.result').find('.roomName').html());
+    var result = $(this).parents('.result');
+    var roomId = result.data('room-id');
+    var subject = $('#Subject').val();
+    var startDate = $('#Date').datepicker('getDate');
+    var startTime = result.find('.time.selected').html();
+    var endDate = $('#Date').datepicker('getDate');
+    var endTime = '4:00p';
+    $.post("/calendar_events", {
+      "room_id": roomId,
+      "contact_ids": [],
+      "start_date": formatDate(startDate, startTime),
+      "end_date": formatDate(endDate, endTime),
+      "subject": subject
+    }, function() {
+      console.log("Success");
+    });
+    $('#bookModal img.roomInfo').attr('src', result.find('img').attr('src'));
+    $('#bookModal span.roomName').html(result.find('.roomName').html());
+    $('#bookModal span.subject').html(subject);
+    $('#bookModal span.time').html(result.find('.time.selected').html());
+    $('#bookModal span.date').html($('#Date').val());
+    $('#bookModal span.room_number').html(result.data('room-number'));
     $('#bookModal').modal('show');
   });
 });
