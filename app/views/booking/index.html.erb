@@ -1,6 +1,7 @@
-<div id="Intro" class="container">
-  <h1>Organatron</h1>
-  <h2>Rooms for:</h2>
+<div id="Intro" class="container active">
+  <div class="row">
+    <h2 class="col-sm-10 col-sm-offset-1">Rooms for:</h2>
+  </div>
 
   <div class="form-horizontal" role="form">
     <div class="form-group">
@@ -10,7 +11,7 @@
     </div>
     <div class="form-group">
       <div class="col-sm-12">
-        <input class="form-control" placeholder="Select Duration in Minutes">
+        <input id="Duration" class="form-control" placeholder="Select Duration in Minutes">
       </div>
     </div>
     <div class="form-group">
@@ -18,6 +19,64 @@
         <input class="form-control attendee" placeholder="Add Attendee">
       </div>
     </div>
+    <div class="row">
+      <h3 class="col-sm-10 col-sm-offset-1">Have a specific time in mind? Choose below</h3>
+      <input placeholder="8:00am" class="form-control" id="SpecificTime">
+    </div>
     <button class="btn btn-default col-sm-6 col-sm-offset-3" id="Search">Search Rooms</button>
+  </div>
+</div>
+
+<div id="Results" class="container passive">
+  <div class="row">
+<div class="result">
+  <img class="roomPhoto" src="../assets/room2.jpg">
+  <div class="roomInfo">
+    <h2>Cocoa Puffs (212)</h2>
+    <span class="time selected">2:15p</span>
+    <span class="time">3:30p</span>
+    <span class="time">5:00p</span>
+    <span class="attendeeCount">12 available attendees</span>
+    <button class="btn btn-default">Book Now</button>
+    <img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">15</span>
+    <img class="icon" src="../assets/ethernet.svg" alt="This room has ethernet available">
+    <img class="icon" src="../assets/marker.svg" alt="This room has a whiteboard">
+    <img class="icon" src="../assets/display.svg" alt="This room has a projector or monitor">
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="result">
+  <img class="roomPhoto" src="../assets/room2.jpg">
+  <div class="roomInfo">
+    <h2>Cocoa Puffs (212)</h2>
+    <span class="time selected">2:15p</span>
+    <span class="time">3:30p</span>
+    <span class="time">5:00p</span>
+    <span class="attendeeCount">12 available attendees</span>
+    <img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">15</span>
+    <img class="icon" src="../assets/ethernet.svg" alt="This room has ethernet available">
+    <img class="icon" src="../assets/marker.svg" alt="This room has a whiteboard">
+    <img class="icon" src="../assets/display.svg" alt="This room has a projector or monitor">
+    <button class="btn btn-default">Book Now</button>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="result">
+  <img class="roomPhoto" src="../assets/room2.jpg">
+  <div class="roomInfo">
+    <h2>Cocoa Puffs (212)</h2>
+    <span class="time selected">2:15p</span>
+    <span class="time">3:30p</span>
+    <span class="time">5:00p</span>
+    <span class="attendeeCount">12 available attendees</span>
+    <img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">15</span>
+    <img class="icon" src="../assets/ethernet.svg" alt="This room has ethernet available">
+    <img class="icon" src="../assets/marker.svg" alt="This room has a whiteboard">
+    <img class="icon" src="../assets/display.svg" alt="This room has a projector or monitor">
+    <button class="btn btn-default">Book Now</button>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
   </div>
 </div>

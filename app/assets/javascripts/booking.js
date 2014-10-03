@@ -20,7 +20,16 @@ function addAttendee(attendee) {
   });
 }
 
+function resizeResults() {
+  $('#Results').css('width', window.innerWidth-350);
+}
+
 $(function() {
+  resizeResults();
+  $(window).resize(function() {
+    resizeResults();
+  });
+
   $('.attendee').autocomplete({
     source: people
   });
@@ -29,10 +38,28 @@ $(function() {
       addAttendee($(this).val());
     }
   });
+  $('#Duration').on('blur', function() {
+    $(this).val($(this).val()+' Minutes');
+  });
+  $('#Duration').on('focus', function() {
+    $(this).val($(this).val().split(' Minutes')[0]);
+  });
 
   $('#Search').on('click', function() {
-    $('#Search').blur().text("Search Again");
-    $('.attendee').fadeOut();
-    $('#Intro').addClass('passive');
+    if ($('#Date').val() == '') {
+      alert("Please select a date");
+      return false;
+    }
+    if ($('#Duration').val() == '') {
+      alert("Please set a duration");
+      return false;
+    }
+    $('#Search').blur().text("Search Again").hide();
+    $('#Results, #Intro').toggleClass('passive active');
+  });
+
+  $('.time').on('click', function() {
+    $(this).parent().find('.time').removeClass('selected');
+    $(this).addClass('selected');
   });
 });

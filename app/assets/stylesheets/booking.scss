@@ -1,5 +1,9 @@
 body {
-  background-image: url('../assets/background.png');
+  background-image: url('../assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: rgb(48,52,66);
 }
 
 #Intro {
@@ -11,8 +15,12 @@ body {
     font-size: 60px;
     padding-bottom: 30px;
   }
-  h1, h2 {
+  h1, h2, h3 {
     color: white;
+  }
+
+  h2, h3 {
+    display: none;
   }
 
   input.form-control {
@@ -27,14 +35,97 @@ body {
     border-radius: 6px;
   }
 }
+#Intro.active {
+  #SpecificTime {
+    display: none;
+  }
+}
 
 #Intro.passive {
-  width: 400px;
+  width: 350px;
   float: left;
+  text-align: left;
+  padding-top: 60px;
 
+  h2, h3 {
+    display: block;
+  }
   input {
     background-color: transparent;
     border: none;
     color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  input.attendee {
+    display: none;
+  }
+  .form-group {
+    margin: 0;
+    div {
+      padding: 0;
+    }
+  }
+
+  h3 {
+    margin-top: 100px;
+  }
+}
+
+#Results.passive {
+  display: none;
+}
+#Results.active {
+  height: 100%;
+  background-color: white;
+  float: right;
+  color: rgb(48,52,66);
+
+  .result {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+
+    .icon {
+      width: 40px;
+      padding: 5px;
+    }
+    .capacity {
+      margin-left: -5px;
+    }
+  }
+
+  .roomPhoto {
+    padding: 22px;
+    width: 300px;
+    height: 160px;
+    float: left;
+  }
+  .roomInfo {
+    float: left;
+    font-size: 15px;
+    font-family: 'Proxima Nova Soft';
+
+    .attendeeCount {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .time {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .time.selected {
+      color: #51a3db;
+    }
+    button {
+      position: absolute;
+      right: 10px;
+      top: 70px;
+      padding: 6px 40px;
+      font-size: 16px;
+      font-family: 'Proxima Nova Light'
+    }
   }
 }

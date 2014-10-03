@@ -14,9 +14,32 @@
  *= require_self
  */
 
-/* Font override */
+/* Fonts */
+@font-face{
+	font-family: 'Proxima Nova Light';
+	src: url('ProximaNova-Light-webfont.eot');
+	src: url('ProximaNova-Light-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('ProximaNova-Light-webfont.woff') format('woff'),
+	     url('ProximaNova-Light-webfont.ttf') format('truetype'),
+	     url('ProximaNova-Light-webfont.svg#webfont') format('svg');
+}
+@font-face{
+  font-family: 'Proxima Nova Soft';
+  src: url('ProximaNovaSoft-Regular-webfont.eot');
+  src: url('ProximaNovaSoft-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('ProximaNovaSoft-Regular-webfont.woff') format('woff'),
+       url('ProximaNovaSoft-Regular-webfont.ttf') format('truetype'),
+       url('ProximaNovaSoft-Regular-webfont.svg#webfont') format('svg');
+}
 * {
-  font-family: "Proxima Nova Soft","Proxima Nova","Open Sans","Gill Sans MT","Gill Sans",Corbel,Arial,sans-serif;
+  font-family: "Proxima Nova Light", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Proxima Nova Soft", sans-serif;
+}
+
+html, body {
+  height: 100%;
 }
 
 button.btn {
@@ -37,4 +60,27 @@ button.btn:focus {
   background-color: #3276b1;
   color: white;
   border-color: #285e8e;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+#Header {
+  background-color: rgb(48,52,66);
+  color: white;
+}
+#Header h1 {
+  margin-top: 0;
+  padding: 15px;
+  font-family: "Proxima Nova Light";
+  vertical-align: middle;
+  display: inline;
+  font-size: 26px;
+}
+#Header img {
+  width: 30px;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
