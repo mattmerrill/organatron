@@ -160,6 +160,13 @@ $(function() {
     $('#bookModal span.time').html(result.find('.time.selected').html());
     $('#bookModal span.date').html($('#Date').val());
     $('#bookModal span.room_number').html(result.data('room-number'));
+    for (var i = 0; i < selectedContacts.length; i++) {
+      for (var j = 0; j < people.length; j++) {
+        if (selectedContacts[i] == people[j].id) {
+          $('#bookModal div.attendees').append($('<div class="col-sm-3"><img src="../assets/person'+people[j].id+'.png"><p>'+people[j].label+'</p></div>'));
+        }
+      }
+    }
     $('#bookModal').modal('show');
   });
 });
