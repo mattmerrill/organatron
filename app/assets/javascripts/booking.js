@@ -20,7 +20,9 @@ function resizeResults() {
 
 function addRoom(room) {
   console.log(room);
-  var result = $('<div class="result"><img class="roomPhoto" src="../assets/room2.jpg"><div class="roomInfo"><h2>'
+  var result = $('<div class="result"><img class="roomPhoto" src="../assets/room'
+  +room.room_number
+  +'.jpg"><div class="roomInfo"><h2>'
   +room.name
   +' ('
   +room.room_number
