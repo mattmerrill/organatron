@@ -15,7 +15,7 @@ function addAttendee(attendee) {
 }
 
 function resizeResults() {
-  $('#Results').css('width', window.innerWidth-350);
+  $('#Results').css('width', window.innerWidth-370);
 }
 
 function addRoom(room) {
