@@ -27,7 +27,7 @@ function addRoom(room) {
   +' ('
   +room.room_number
   +')</h2><span class="time selected">2:15p</span><span class="time">3:30p</span><span class="time">5:00p</span><span class="attendeeCount">'
-  +' All attendees available</span><button class="btn btn-default" data-toggle="modal" data-target="#bookModal">Book Now</button><img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">'
+  +' All attendees available</span><button class="btn btn-default bookNow">Book Now</button><img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">'
   +room.capacity
   +'</span></div><div class="clearfix"></div></div>');
   if (room.ethernet) {
@@ -118,5 +118,10 @@ $(function() {
 
   $('#CloseBookingModal').on('click', function() {
     location.reload();
+  });
+
+  $(document).on('click', '.bookNow', function() {
+    $('#bookModal img.roomInfo').attr('src', $(this).parents('.result').find('img').attr('src'));
+    $('#bookModal').modal('show');
   });
 });
