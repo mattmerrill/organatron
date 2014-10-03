@@ -23,10 +23,9 @@ function addRoom(room) {
   var result = $('<div class="result"><img class="roomPhoto" src="../assets/room'
   +room.room_number
   +'.jpg"><div class="roomInfo"><h2>'
-  +room.name
-  +' ('
+  +'<span class="roomName">'+room.name+'</span> ('
   +room.room_number
-  +')</h2><span class="time selected">2:15p</span><span class="time">3:30p</span><span class="time">5:00p</span><span class="attendeeCount">'
+  +')</h2><span class="attendeeCount">'
   +' All attendees available</span><button class="btn btn-default bookNow">Book Now</button><img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">'
   +room.capacity
   +'</span></div><div class="clearfix"></div></div>');
@@ -38,6 +37,15 @@ function addRoom(room) {
   }
   if (room.monitor) {
     result.find('.roomInfo').append('<img class="icon" src="../assets/display.svg" alt="This room has a projector or monitor">');
+  }
+
+  // Add available time slots
+  for (var i = 0; i < room.availabilities.length; i++) {
+    var availability = $('<span class="time">'+room.availabilities[i]+'</span>');
+    if (i === 0) {
+      availability.addClass('selected');
+    }
+    result.find('h2').after(availability);
   }
   $('#Results .row').append(result);
 }
@@ -122,6 +130,7 @@ $(function() {
 
   $(document).on('click', '.bookNow', function() {
     $('#bookModal img.roomInfo').attr('src', $(this).parents('.result').find('img').attr('src'));
+    $('#bookModal span.roomName').html($(this).parents('.result').find('.roomName').html());
     $('#bookModal').modal('show');
   });
 });
