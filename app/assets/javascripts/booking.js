@@ -166,7 +166,7 @@ $(function() {
     var usefulEndDateTime = formatDate(endDateTime);
     $.post("/calendar_events", {
       "room_id": roomId,
-      "contact_ids": [],
+      "contact_ids": selectedContacts,
       "start_date": usefulStartDateTime,
       "end_date": usefulEndDateTime,
       "subject": subject
