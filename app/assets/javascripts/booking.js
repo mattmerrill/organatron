@@ -18,8 +18,26 @@ function resizeResults() {
   $('#Results').css('width', window.innerWidth-350);
 }
 
-function addRoom() {
-  $('#Results .row').append('<div class="result"><img class="roomPhoto" src="../assets/room2.jpg"><div class="roomInfo"><h2>Cocoa Puffs (212)</h2><span class="time selected">2:15p</span><span class="time">3:30p</span><span class="time">5:00p</span><span class="attendeeCount">12 available attendees</span><button class="btn btn-default" data-toggle="modal" data-target="#bookModal">Book Now</button><img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">15</span><img class="icon" src="../assets/ethernet.svg" alt="This room has ethernet available"><img class="icon" src="../assets/marker.svg" alt="This room has a whiteboard"><img class="icon" src="../assets/display.svg" alt="This room has a projector or monitor"></div><div class="clearfix"></div></div>');
+function addRoom(room) {
+  console.log(room);
+  var result = $('<div class="result"><img class="roomPhoto" src="../assets/room2.jpg"><div class="roomInfo"><h2>'
+  +room.name
+  +' ('
+  +room.room_number
+  +')</h2><span class="time selected">2:15p</span><span class="time">3:30p</span><span class="time">5:00p</span><span class="attendeeCount">'
+  +' All attendees available</span><button class="btn btn-default" data-toggle="modal" data-target="#bookModal">Book Now</button><img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">'
+  +room.capacity
+  +'</span></div><div class="clearfix"></div></div>');
+  if (room.ethernet) {
+    result.find('.roomInfo').append('<img class="icon" src="../assets/ethernet.svg" alt="This room has ethernet available">');
+  }
+  if (room.whiteboard) {
+    result.find('.roomInfo').append('<img class="icon" src="../assets/marker.svg" alt="This room has a whiteboard">');
+  }
+  if (room.monitor) {
+    result.find('.roomInfo').append('<img class="icon" src="../assets/display.svg" alt="This room has a projector or monitor">');
+  }
+  $('#Results .row').append(result);
 }
 
 $(function() {
@@ -80,7 +98,9 @@ $(function() {
       duration = 30;
     }
     $.getJSON("/availabilities?duration="+duration+"&people_ids=3", function(data) {
-
+      for (var i = 0; i < data.rooms.length; i++) {
+        addRoom(data.rooms[i]);
+      }
     });
 
     $('#Search').blur().text("Search Again").toggleClass('col-sm-6 col-sm-offset-3 col-sm-8 col-sm-offset-2');
