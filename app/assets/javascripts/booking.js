@@ -69,6 +69,16 @@ $(function() {
       alert("Please set a subject for your meeting");
       return false;
     }
+
+    // Get the available rooms
+    var duration = $('#Duration').val().split(' Minutes')[0];
+    if (duration != 30 && duration != 60 && duration != 180) {
+      duration = 30;
+    }
+    $.getJSON("/availabilities?duration="+duration+"&people_ids=3", function(data) {
+
+    });
+
     $('#Search').blur().text("Search Again").toggleClass('col-sm-6 col-sm-offset-3 col-sm-8 col-sm-offset-2');
     $('#Date').parent().toggleClass('col-sm-12 col-sm-6');
     $('#Duration').parent().toggleClass('col-sm-12 col-sm-6');
