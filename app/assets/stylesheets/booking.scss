@@ -4,12 +4,21 @@ body {
   background-size: cover;
   background-position: center center;
   background-color: rgb(48,52,66);
+  color: #444;
 }
 
 #Intro {
+  #LogoRow {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  img#Logo {
+    width: 100px;
+  }
+
   max-width: 700px;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 60px;
 
   h1 {
     font-size: 60px;
@@ -45,7 +54,11 @@ body {
   width: 350px;
   float: left;
   text-align: left;
-  padding-top: 60px;
+  padding-top: 30px;
+
+  #LogoRow {
+    margin-bottom: 10px;
+  }
 
   h2, h3 {
     display: block;
@@ -158,6 +171,7 @@ body {
   }
   h1 {
     text-align: center;
+    margin-bottom: 25px;
   }
   p {
     font-size: 20px;
