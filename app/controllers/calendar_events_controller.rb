@@ -6,15 +6,15 @@ class CalendarEventsController < ApplicationController
     room = Room.find(params[:room_id])
     subject = params[:subject]
     contacts = Contact.find(params[:contact_ids])
-    event = CalendarEvent.new(start_date: params[:start_date], end_date: params[:end_date])
+    event = CalendarEvent.new(start_date: '2014-10-02T12:00:00Z', end_date: '2014-10-02T12:10:00Z')
     event.contacts << contacts
     event.rooms << room
     event.save
 
     cal = ::Icalendar::Calendar.new
 
-    event_start = DateTime.parse(params[:start_date])
-    event_end = DateTime.parse(params[:end_date])
+    event_start = DateTime.parse('2014-10-02T12:00:00Z')
+    event_end = DateTime.parse('2014-10-02T12:10:00Z')
 
     # tzid = "America/Phoenix"
     # tz = TZInfo::Timezone.get tzid
