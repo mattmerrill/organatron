@@ -40,4 +40,4 @@ gem 'thin', '~> 1.6.3'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'delayed_job'
+gem 'delayed_job_active_record'
