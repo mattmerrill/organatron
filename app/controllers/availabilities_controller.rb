@@ -18,7 +18,7 @@ class AvailabilitiesController < ApplicationController
         Room.find_by_name('Count Chocula'),
         Room.find_by_name('Fruity Pebbles'),
         Room.find_by_name('Fruit Loops'),
-        Room.find_by_name('Honey Smacks')
+        Room.find_by_name('Frosted Flakes')
       ],
       '60' => [
         Room.find_by_name('Pops'),
