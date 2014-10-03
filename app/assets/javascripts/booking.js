@@ -65,6 +65,7 @@ $(function() {
   $('#Date').datepicker({
     dateFormat: 'MM d, yy'
   });
+  $('#Date').datepicker('setDate', new Date);
   $('.attendee').autocomplete({
     source: people,
     select: function(event, ui) {
@@ -72,6 +73,7 @@ $(function() {
       addAttendee();
     }
   });
+  $('#Duration').val('60 Minutes');
 
   // Get contacts
   $.getJSON("/contacts", function(data) {
@@ -164,7 +166,7 @@ $(function() {
     var usefulEndDateTime = formatDate(endDateTime);
     $.post("/calendar_events", {
       "room_id": roomId,
-      "contact_ids": selectedContacts,
+      "contact_ids": [],
       "start_date": usefulStartDateTime,
       "end_date": usefulEndDateTime,
       "subject": subject
