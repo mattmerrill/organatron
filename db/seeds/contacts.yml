@@ -1,38 +1,51 @@
-- display_name: Matt Merril
+- id: 1
+  display_name: Matt Merril
   email: mattm@infusionsoft.com
 
-- display_name: Sheena Smith
+- id: 2
+  display_name: Sheena Smith
   email: sheena.mccoy@infusionsoft.com
 
-- display_name: David Smith
+- id: 3
+  display_name: David Smith
   email: bigdave.smith@gmail.com
 
-- display_name: Todd Meyer
+- id: 4
+  display_name: Todd Meyer
   email: todd.meyer@infusionsoft.com
 
-- display_name: Lisa Tassiello
+- id: 5
+  display_name: Lisa Tassiello
   email: lisa.tassiello@infusionsoft.com
 
-- display_name: Carlos Ochoa
+- id: 6
+  display_name: Carlos Ochoa
   email: carlos.ochoa@infusionsoft.com
 
-- display_name: Nate Leavitt
+- id: 7
+  display_name: Nate Leavitt
   email: Nathan.leavitt@infusionsoft.com
 
-- display_name: Greg Head
+- id: 8
+  display_name: Greg Head
   email: greg.head@infusionsoft.com
 
-- display_name: Eric Martineau
+- id: 9
+  display_name: Eric Martineau
   email: ericm@infusionsoft.com
 
-- display_name: Amanda Souders
+- id: 10
+  display_name: Amanda Souders
   email: amanda.souders@infusionsoft.com
 
-- display_name: Jared Bodner
+- id: 11
+  display_name: Jared Bodner
   email: jared.bodner@infusionsoft.com
 
-- display_name: Hal Halladay
+- id: 12
+  display_name: Hal Halladay
   email: hal.halladay@infusionsoft.com
 
-- display_name: Ammon Curtis
+- id: 13
+  display_name: Ammon Curtis
   email: ammon.curtis@infusionsoft.com
