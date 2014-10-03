@@ -1,22 +1,16 @@
 var attendees = [];
-var people =  [
-      "David Smith",
-      "Brian Boughton",
-      "Carlos Ochoa",
-      "Jeff Boughton",
-      "Lisa Tassiello",
-      "Matt Merrill",
-      "Sheena Smith",
-      "Todd Meyer"
-    ];
+var people = [];
+var selectedContacts = [];
 
 function addAttendee(attendee) {
-  attendees.push(attendee);
-  console.log("Current attendees: "+attendees);
   $('.attendee').last().parents('.form-group').after('<div class="form-group"><div class="col-sm-12"><input class="form-control attendee" placeholder="Add Attendee"></div></div>');
   $('.attendee').last().focus();
   $('.attendee').last().autocomplete({
-    source: people
+    source: people,
+    select: function(event, ui) {
+      selectedContacts.push(ui.item.id);
+      addAttendee();
+    }
   });
 }
 
@@ -25,17 +19,31 @@ function resizeResults() {
 }
 
 $(function() {
+  // Window resize helpers
   resizeResults();
   $(window).resize(function() {
     resizeResults();
   });
 
+  // Initialize input helpers
   $('#Date').datepicker({
     dateFormat: 'MM d, yy'
   });
   $('.attendee').autocomplete({
-    source: people
+    source: people,
+    select: function(event, ui) {
+      selectedContacts.push(ui.item.id);
+      addAttendee();
+    }
   });
+
+  // Get contacts
+  $.getJSON("/contacts", function(data) {
+    for (var key = 0, size = data.length; key < size; key++) {
+      people.push({"label":data[key].display_name,"id":data[key].id});
+    }
+  });
+
   $(document).on('keypress', '.attendee', function(e) {
     if(e.charCode === 13) {
       addAttendee($(this).val());
