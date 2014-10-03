@@ -32,11 +32,22 @@ class CalendarEventsController < ApplicationController
     end
     cal.publish
 
-    contacts.each do |contact|
-      MeetmeMailer.event_confirmation(contact, params[:start_date], room.name, cal, subject).deliver
-    end
+
+    # room_name = room.name
+    Delayed::Job.enqueue SendInviteJob.new(contacts.map{|contact| contact.email}, params[:start_date], "room.name", cal, subject)
+    #
+    # contacts.each do |contact|
+    #   MeetmeMailer.delay.event_confirmation(contact, params[:start_date], room.name, cal, subject).deliver
+    # end
 
     render json: { success: true }
   end
 
+end
+
+
+SendInviteJob = Struct.new(:emails, :start_date, :room_name, :calendar, :subject) do
+  def perform
+    emails.each { |email| MeetmeMailer.deliver_event_confirmation(email, start_date, room_name, calendar, subject).deliver }
+  end
 end
