@@ -29,7 +29,7 @@ class AvailabilitiesController < ApplicationController
       ],
       '180' => [
         Room.find_by_name('Breakout'),
-        Room.find_by_name('Theater')
+        Room.find_by_name('Wheaties')
       ]
     }
 
