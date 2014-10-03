@@ -4,6 +4,7 @@ class CalendarEventsController < ApplicationController
 
   def create
     room = Room.find(params[:room_id])
+    subject = params[:subject]
     contacts = Contact.find(params[:contact_ids])
     event = CalendarEvent.new(start_date: params[:start_date], end_date: params[:end_date])
     event.contacts << contacts
@@ -25,14 +26,14 @@ class CalendarEventsController < ApplicationController
     cal.event do |e|
       e.dtstart = ::Icalendar::Values::DateTime.new event_start
       e.dtend   = ::Icalendar::Values::DateTime.new event_end
-      e.summary = "meetme @ #{event_start.strftime('%l %P')}"
-      e.description = description
+      e.summary = "meetme @ #{event_start.strftime('%I:%M %P')}"
+      e.description = subject
       e.location = room.name
     end
     cal.publish
 
     contacts.each do |contact|
-      MeetmeMailer.event_confirmation(contact, params[:start_date], room.name, cal, description).deliver
+      MeetmeMailer.event_confirmation(contact, params[:start_date], room.name, cal, subject).deliver
     end
 
     render json: { success: true }

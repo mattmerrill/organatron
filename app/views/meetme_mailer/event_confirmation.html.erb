@@ -1001,7 +1001,7 @@ table.divider {
               </tbody></table>
               <table class="header" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
                 <tbody><tr class="border" style="font-size: 1px;line-height: 1px;background-color: #e9e9e9;height: 1px"><td style="padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;vertical-align: top;line-height: 1px;width: 602px">&nbsp;</td></tr>
-                <tr><td class="logo" style="padding-top: 32px;padding-bottom: 32px;padding-left: 0;padding-right: 0;vertical-align: top;font-family: sans-serif;color: #41637e;font-size: 26px;font-weight: 700;letter-spacing: -0.02em;line-height: 32px;text-align: center" align="center"><center><div id="emb-email-header">meetme @ <%= @start_time.strftime("%l %P") %>, <%= @start_time.strftime("%A") %></div></center></td></tr>
+                <tr><td class="logo" style="padding-top: 32px;padding-bottom: 32px;padding-left: 0;padding-right: 0;vertical-align: top;font-family: sans-serif;color: #41637e;font-size: 26px;font-weight: 700;letter-spacing: -0.02em;line-height: 32px;text-align: center" align="center"><center><div id="emb-email-header">meetme @ <%= @start_time.strftime("%I:%M %P") %>, <%= @start_time.strftime("%A") %></div></center></td></tr>
               </tbody></table>
             </center>
           </td>
@@ -1032,7 +1032,7 @@ table.divider {
               </p>
 
 <p style="Margin-top: 0;-moz-osx-font-smoothing: grayscale;font-family: Georgia, serif;color: #565656;Margin-bottom: 24px;-webkit-font-smoothing: antialiased;font-size: 16px;line-height: 24px">
-<span style="letter-spacing:-0.03em">&#8203;<%= @start_time.strftime("%m/%d/%Y at %I:%M%p") %></span>
+<span style="letter-spacing:-0.03em">&#8203;<%= @start_time.strftime("%m/%d/%Y at %I:%M %P") %></span>
 </p>
               <h1 style="Margin-top: 0;font-weight: 700;letter-spacing: -0.03em;-webkit-font-smoothing: antialiased;color: #565656;font-size: 36px;line-height: 42px;Margin-bottom: 18px;font-family: sans-serif">&nbsp;</h1>
 
