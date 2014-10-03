@@ -133,9 +133,23 @@ $(function() {
   });
 
   // We want 2014-10-02T14:00:00Z
-  function formatDate(date, time) {
-    return date.getFullYear() + '-' + ("0000"+(1+date.getMonth())).slice(-2) + '-' + ("0000"+(date.getDate())).slice(-2) + 'T14:00:00Z';
+  function formatDateAndTime(date, time) {
+    return date.getFullYear() + '-' + ("0000"+(1+date.getMonth())).slice(-2) + '-' + ("0000"+(date.getDate())).slice(-2) + 'T' + convertTimeStr(time) + ':00Z';
   }
+
+  function formatDate(date) {
+    return date.getFullYear() + '-' + ("0000"+(1+date.getMonth())).slice(-2) + '-' + ("0000"+(date.getDate())).slice(-2) + 'T' + ("0000"+(date.getHours())).slice(-2) + ':' + ("0000"+(date.getMinutes())).slice(-2) + ':00Z';
+  }
+
+  function convertTimeStr(timeStr) {
+    var timeRe = /(\d{1,2}):(\d\d)([a|p])/;
+    var found = timeStr.match(timeRe);
+    var hour = parseInt(found[1]);
+    var min = found[2];
+    var meridiem = found[3];
+
+    return ("0000" + (hour + (meridiem === 'p' ? 12 : 0))).slice(-2) + ":" + min;
+}
 
   $(document).on('click', '.bookNow', function() {
     var result = $(this).parents('.result');
@@ -143,13 +157,16 @@ $(function() {
     var subject = $('#Subject').val();
     var startDate = $('#Date').datepicker('getDate');
     var startTime = result.find('.time.selected').html();
-    var endDate = $('#Date').datepicker('getDate');
-    var endTime = '4:00p';
+    var usefulStartDateTime = formatDateAndTime(startDate,startTime);
+    var duration = $('#Duration').val().split(' Minutes')[0];
+    var endDateTime = new Date((new Date(usefulStartDateTime)).getTime() + duration*60000 + 25200000);
+    console.log(new Date(usefulStartDateTime));
+    var usefulEndDateTime = formatDate(endDateTime);
     $.post("/calendar_events", {
       "room_id": roomId,
-      "contact_ids": [],
-      "start_date": formatDate(startDate, startTime),
-      "end_date": formatDate(endDate, endTime),
+      "contact_ids": selectedContacts,
+      "start_date": usefulStartDateTime,
+      "end_date": usefulEndDateTime,
       "subject": subject
     }, function() {
       console.log("Success");
