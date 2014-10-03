@@ -62,4 +62,8 @@ $(function() {
     $(this).parent().find('.time').removeClass('selected');
     $(this).addClass('selected');
   });
+
+  $('#CloseBookingModal').on('click', function() {
+    location.reload();
+  });
 });

@@ -39,7 +39,7 @@
     <span class="time">3:30p</span>
     <span class="time">5:00p</span>
     <span class="attendeeCount">12 available attendees</span>
-    <button class="btn btn-default">Book Now</button>
+    <button class="btn btn-default" data-toggle="modal" data-target="#bookModal">Book Now</button>
     <img class="icon" src="../assets/people.svg" alt="Room Capacity"><span class="capacity">15</span>
     <img class="icon" src="../assets/ethernet.svg" alt="This room has ethernet available">
     <img class="icon" src="../assets/marker.svg" alt="This room has a whiteboard">
@@ -80,5 +80,39 @@
   <div class="clearfix"></div>
 </div>
 
+  </div>
+</div>
+
+<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1>You have booked Cocoa Puffs</h1>
+        <div class="row">
+          <img src="../assets/room1.jpg" class="roomInfo col-sm-6">
+          <div class="roomInfo col-sm-6">
+            <p>Date: Jan 15th, 2014</p>
+            <p>Time: 2:15</p>
+            <p>Room: 115</p>
+          </div>
+        </div>
+        <h1>Invited Attendees</h1>
+        <div class="row attendees">
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+        </div>
+        <div class="row attendees">
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+          <div class="col-sm-3"><img src="../assets/personPhoto.png"><p>Jane Doe</p></div>
+        </div>
+        <div class="row">
+          <button id="CloseBookingModal" class="col-sm-4 col-sm-offset-4 btn btn-default">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
