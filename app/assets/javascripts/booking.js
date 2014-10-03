@@ -54,7 +54,13 @@ $(function() {
       alert("Please set a duration");
       return false;
     }
+    if ($('#Subject').val() == '') {
+      alert("Please set a subject for your meeting");
+      return false;
+    }
     $('#Search').blur().text("Search Again").toggleClass('col-sm-6 col-sm-offset-3 col-sm-8 col-sm-offset-2');
+    $('#Date').parent().toggleClass('col-sm-12 col-sm-6');
+    $('#Duration').parent().toggleClass('col-sm-12 col-sm-6');
     $('#Results, #Intro').toggleClass('passive active');
   });
 
