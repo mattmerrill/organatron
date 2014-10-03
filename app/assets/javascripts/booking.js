@@ -30,6 +30,9 @@ $(function() {
     resizeResults();
   });
 
+  $('#Date').datepicker({
+    dateFormat: 'MM d, yy'
+  });
   $('.attendee').autocomplete({
     source: people
   });
