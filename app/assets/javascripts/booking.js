@@ -40,7 +40,7 @@ function addRoom(room) {
   }
 
   // Add available time slots
-  for (var i = 0; i < room.availabilities.length; i++) {
+  for (var i = room.availabilities.length - 1; i >= 0; i--) {
     var availability = $('<span class="time">'+room.availabilities[i]+'</span>');
     if (i === 0) {
       availability.addClass('selected');
