@@ -15,12 +15,13 @@ class AvailabilitiesController < ApplicationController
   def fake_data(duration, attendees)
     fake_rooms = {
       '30' => [
+        Room.find_by_name('Frosted Flakes'),
         Room.find_by_name('Count Chocula'),
         Room.find_by_name('Fruity Pebbles'),
-        Room.find_by_name('Fruit Loops'),
-        Room.find_by_name('Frosted Flakes')
+        Room.find_by_name('Fruit Loops')
       ],
       '60' => [
+        Room.find_by_name('Frosted Flakes'),
         Room.find_by_name('Pops'),
         Room.find_by_name('Trix'),
         Room.find_by_name('Honey Comb'),
@@ -28,6 +29,7 @@ class AvailabilitiesController < ApplicationController
         Room.find_by_name('Fruit Loops'),
       ],
       '180' => [
+        Room.find_by_name('Frosted Flakes'),
         Room.find_by_name('Breakout'),
         Room.find_by_name('Wheaties')
       ]
