@@ -20,17 +20,19 @@ class CalendarEventsController < ApplicationController
     # timezone = tz.ical_timezone event_start
     # cal.add_timezone timezone
 
+    description = "To talk about all the awesome things!"
+
     cal.event do |e|
       e.dtstart = ::Icalendar::Values::DateTime.new event_start
       e.dtend   = ::Icalendar::Values::DateTime.new event_end
       e.summary = "meetme @ #{event_start.strftime('%l %P')}"
-      e.description = "My description"
-      e.location = 'Matts desk'
+      e.description = description
+      e.location = room.name
     end
     cal.publish
 
     contacts.each do |contact|
-      MeetmeMailer.event_confirmation(contact, params[:start_date], room.name, cal).deliver
+      MeetmeMailer.event_confirmation(contact, params[:start_date], room.name, cal, description).deliver
     end
 
     render json: { success: true }
