@@ -34,10 +34,13 @@ class CalendarEventsController < ApplicationController
 
 
     # room_name = room.name
-    Delayed::Job.enqueue SendInviteJob.new(contacts.map{|contact| contact.email}, params[:start_date], "room.name", cal, subject)
+    event_string = cal.to_ical
+    contacts.each do |contact|
+      Delayed::Job.enqueue SendInviteJob.new(contact.email, params[:start_date], room.name, event_string, subject)
+    end
     #
     # contacts.each do |contact|
-    #   MeetmeMailer.delay.event_confirmation(contact, params[:start_date], room.name, cal, subject).deliver
+    #   MeetmeMailer.event_confirmation(contacts.map{|contact| contact.email}, params[:start_date], room.name, event_string, subject).deliver
     # end
 
     render json: { success: true }
@@ -48,6 +51,7 @@ end
 
 SendInviteJob = Struct.new(:emails, :start_date, :room_name, :calendar, :subject) do
   def perform
-    emails.each { |email| MeetmeMailer.deliver_event_confirmation(email, start_date, room_name, calendar, subject).deliver }
+    # emails.each { |email| MeetmeMailer.deliver_event_confirmation(email, start_date, room_name, calendar, subject).deliver }
+    MeetmeMailer.deliver_event_confirmation(emails, start_date, room_name, calendar, subject).deliver
   end
 end
