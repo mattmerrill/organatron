@@ -27,6 +27,8 @@ gem 'spring',        group: :development
 
 gem 'icalendar', require: true
 
+gem 'thin', '~> 1.6.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
